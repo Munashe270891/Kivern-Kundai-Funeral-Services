@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kivern & Kundai Funeral Services | Your Peace of Mind is Our Priority</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #4A154B;
+            --primary-light: #6B21A8;
+            --secondary: #059669;
+            --accent-gold: #D97706;
+            --dark: #0F172A;
+            --light: #F8FAFC;
+            --gray: #64748B;
+            --light-gray: #F1F5F9;
+            --white: #FFFFFF;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, .brand-font {
+            font-family: 'Cinzel', serif;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 8px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+        }
+
+        .top-bar a {
+            color: #CBD5E1;
+            text-decoration: none;
+            margin-left: 15px;
+            transition: var(--transition);
+        }
+
+        .top-bar a:hover {
+            color: var(--white);
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border: 2px solid var(--accent-gold);
+        }
+
+        .logo-text h1 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            line-height: 1.1;
+        }
+
+        .logo-text span {
+            font-size: 0.75rem;
+            color: var(--secondary);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn-call {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(74, 21, 75, 0.25);
+            transition: var(--transition);
+        }
+
+        .btn-call:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(74, 21, 75, 0.35);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(74, 21, 75, 0.85)), url('https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&fit=crop&w=1600&q=80') center/cover;
+            color: var(--white);
+            padding: 100px 5% 120px;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            font-style: italic;
+            color: #E2E8F0;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-secondary {
+            background-color: var(--white);
+            color: var(--primary);
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: var(--transition);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--light-gray);
+            transform: translateY(-2px);
+        }
+
+        /* Section Global */
+        section {
+            padding: 80px 5%;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+
+        /* Plans Section */
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .plan-card {
+            background-color: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .plan-card.featured {
+            border: 2px solid var(--secondary);
+        }
+
+        .plan-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--secondary);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+        }
+
+        .plan-header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: var(--white);
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .plan-card:nth-child(2) .plan-header {
+            background: linear-gradient(135deg, #1E3A8A, #3B82F6);
+        }
+
+        .plan-card:nth-child(3) .plan-header {
+            background: linear-gradient(135deg, var(--secondary), #10B981);
+        }
+
+        .plan-header h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .plan-price {
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+
+        .plan-price span {
+            font-size: 0.9rem;
+            font-weight: 400;
+            opacity: 0.8;
+        }
+
+        .plan-body {
+            padding: 30px 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .plan-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--light-gray);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+        }
+
+        .plan-features li i {
+            color: var(--secondary);
+        }
+
+        .btn-plan {
+            display: block;
+            text-align: center;
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-plan:hover {
+            background-color: var(--primary);
+        }
+
+        /* Services Section */
+        .services-bg {
+            background-color: var(--light-gray);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(74, 21, 75, 0.08);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 18px;
+        }
+
+        .service-card h3 {
+            font-size: 1.1rem;
+            color: var(--dark);
+        }
+
+        /* Interactive Calculator */
+        .calculator-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+        }
+
+        .calc-group {
+            margin-bottom: 20px;
+        }
+
+        .calc-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .calc-group select, .calc-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #CBD5E1;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .calc-result {
+            background-color: var(--light-gray);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 25px;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .calc-result h4 {
+            color: var(--gray);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .calc-result .amount {
+            font-size: 2.2rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin: 5px 0;
+        }
+
+        /* Policy Terms Accordion */
+        .policy-section {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .accordion-item {
+            background-color: var(--white);
+            border-radius: 8px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.04);
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            padding: 18px 25px;
+            background-color: var(--white);
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .accordion-header:hover {
+            background-color: #FAF5FF;
+            color: var(--primary);
+        }
+
+        .accordion-content {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0,1,0,1);
+            background-color: #FFFFFF;
+            font-size: 0.95rem;
+            color: var(--gray);
+        }
+
+        .accordion-item.active .accordion-content {
+            padding: 20px 25px;
+            max-height: 1000px;
+            border-top: 1px solid var(--light-gray);
+        }
+
+        /* Contacts & Locations */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .contact-info-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+        }
+
+        .info-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .info-item i {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-top: 3px;
+        }
+
+        .phone-numbers {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin-top: 8px;
+        }
+
+        .phone-numbers a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .phone-numbers a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 40px 5% 20px;
+            text-align: center;
+        }
+
+        .footer-bottom {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #334155;
+            font-size: 0.85rem;
+            color: #94A3B8;
+        }
+
+        /* Responsive UI adjustments */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .top-bar {
+                flex-direction: column;
+                gap: 5px;
+                text-align: center;
+            }
+            .hero h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Contact Bar -->
+    <div class="top-bar">
+        <div>
+            <i class="fa-solid fa-location-dot"></i> Stand 595 Budiriro 1, 212 Close, Harare[cite: 1, 3]
+        </div>
+        <div>
+            <i class="fa-solid fa-phone"></i> 24/7 Helpline: 
+            <a href="tel:+263772128153">+263 772 128 153</a>[cite: 1, 3]
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <nav>
+        <div class="logo-container">
+            <div class="logo-icon">KK</div>
+            <div class="logo-text">
+                <h1>KIVERN & KUNDAI</h1>[cite: 1, 3]
+                <span>FUNERAL SERVICES</span>[cite: 1, 3]
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#plans">Cover Plans</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#calculator">Calculator</a></li>
+            <li><a href="#policy">Policy Terms</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+        <a href="https://wa.me/263772128153?text=Hello%20Kivern%20%26%20Kundai%20Funeral%20Services,%20I%20would%20like%20to%20make%20an%20inquiry." target="_blank" class="btn-call">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+        </a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Your Peace of Mind is Our Priority</h2>[cite: 1]
+        <p>Providing dignified, professional, and reliable funeral cover services across Zimbabwe with compassion when you need it most.</p>
+        <div class="hero-buttons">
+            <a href="#plans" class="btn-secondary">Explore Cover Plans</a>
+            <a href="#contact" class="btn-call"><i class="fa-solid fa-phone-flip"></i> Immediate Assistance</a>
+        </div>
+    </section>
+
+    <!-- Cover Plans Section -->
+    <section id="plans">
+        <div class="section-header">
+            <h2>Our Cover Plans</h2>
+            <p style="color: var(--gray); margin-top: 8px;">Affordable family protection tailored to your peace of mind</p>
+        </div>
+        <div class="plans-grid">
+            <!-- Plan 1 -->
+            <div class="plan-card">
+                <div class="plan-header">
+                    <h3>Kivern Diamond Plan</h3>[cite: 1]
+                    <div class="plan-price">$5 <span>/ month</span></div>[cite: 1]
+                </div>
+                <div class="plan-body">
+                    <ul class="plan-features">
+                        <li><i class="fa-solid fa-check-circle"></i> Covers 5 Family Members[cite: 1]</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Quality Coffin Included[cite: 1, 5]</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Mortuary Services & Washing[cite: 3, 5]</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Local Body Transportation[cite: 1, 5]</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Documentation Assistance[cite: 1]</li>
+                    </ul>
+                    <a href="https://wa.me/263772128153?text=I%20am%20interested%20in%20joining%20the%20Kivern%20Diamond%20Plan%20($5/pm)" target="_blank" class="btn-plan">Select Plan</a>
+                </div>
+            </div>
+
+            <!-- Plan 2 -->
+            <div class="plan-card featured">
+                <div class="plan-badge">Popular</div>
+                <div class="plan-header">
+                    <h3>Kundai Family Plan</h3>[cite: 1]
+                    <div class="plan-price">$7 <span>/ month</span></div>[cite: 1]
+                </div>
+                <div class="plan-body">
+                    <ul class="plan-features">
+                        <li><i class="fa-solid fa-check-circle"></i> Covers 5 Family Members[cite: 1]</li>
+                        <li><i class="fa-solid fa-check-circle"></i> <strong>$50 Allowance for Food</strong>[cite: 1]</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Standard Casket Upgrade[cite: 1, 5]</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Full Funeral & Mortuary Care[cite: 1, 5]</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Hearse & Transport Provided[cite: 1, 5]</li>
+                    </ul>
+                    <a href="https://wa.me/263772128153?text=I%20am%20interested%20in%20joining%20the%20Kundai%20Family%20Plan%20($7/pm)" target="_blank" class="btn-plan" style="background-color: var(--secondary);">Select Plan</a>
+                </div>
+            </div>
+
+            <!-- Plan 3 -->
+            <div class="plan-card">
+                <div class="plan-header">
+                    <h3>Kundai Emerald Plan</h3>[cite: 1]
+                    <div class="plan-price">$9 <span>/ month</span></div>[cite: 1]
+                </div>
+                <div class="plan-body">
+                    <ul class="plan-features">
+                        <li><i class="fa-solid fa-check-circle"></i> Covers 5 Family Members[cite: 1]</li>
+                        <li><i class="fa-solid fa-check-circle"></i> <strong>$100 Allowance for Food</strong>[cite: 1]</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Premium Executive Casket[cite: 1, 5]</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Full Mortuary, Dress & Prep[cite: 5]</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Machine & Tent Setup Included[cite: 5]</li>
+                    </ul>
+                    <a href="https://wa.me/263772128153?text=I%20am%20interested%20in%20joining%20the%20Kundai%20Emerald%20Plan%20($9/pm)" target="_blank" class="btn-plan">Select Plan</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview Section -->
+    <section id="services" class="services-bg">
+        <div class="section-header">
+            <h2>Our Full Services</h2>[cite: 1, 5]
+            <p style="color: var(--gray); margin-top: 8px;">Comprehensive funeral, mortuary, and cash-based solutions</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-box-archive"></i></div>
+                <h3>Quality Coffins & Caskets</h3>[cite: 1, 5]
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-van-shuttle"></i></div>
+                <h3>Transportation & Hearse</h3>[cite: 1, 5]
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                <h3>Funeral Arrangements</h3>[cite: 1]
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-file-signature"></i></div>
+                <h3>Documentation</h3>[cite: 1]
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-earth-africa"></i></div>
+                <h3>Repatriation & Expatriation</h3>[cite: 1]
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-fire"></i></div>
+                <h3>Cremation Services</h3>[cite: 1]
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-pump-medical"></i></div>
+                <h3>Embalming & Dressing</h3>[cite: 1, 5]
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-campground"></i></div>
+                <h3>Machine & Tent Supply</h3>[cite: 5]
+            </div>
+        </div>
+    </section>
+
+    <!-- Plan Calculator -->
+    <section id="calculator">
+        <div class="section-header">
+            <h2>Plan Premium Estimator</h2>
+            <p style="color: var(--gray); margin-top: 8px;">Estimate your monthly expenditure for your family cover</p>
+        </div>
+        <div class="calculator-container">
+            <div class="calc-group">
+                <label for="plan-select">Choose Preferred Plan Tier:</label>
+                <select id="plan-select" onchange="calculateTotal()">
+                    <option value="5">Kivern Diamond Plan ($5/pm - 5 Members)</option>[cite: 1]
+                    <option value="7" selected>Kundai Family Plan ($7/pm - 5 Members)</option>[cite: 1]
+                    <option value="9">Kundai Emerald Plan ($9/pm - 5 Members)</option>[cite: 1]
+                </select>
+            </div>
+            <div class="calc-group">
+                <label for="family-groups">Number of Family Units (5 Members per Unit):</label>[cite: 1]
+                <input type="number" id="family-groups" min="1" max="10" value="1" onchange="calculateTotal()" oninput="calculateTotal()">
+            </div>
+            <div class="calc-result">
+                <h4>Total Monthly Subscription</h4>
+                <div class="amount" id="calc-total">$7.00 USD</div>
+                <p id="calc-desc" style="font-size: 0.85rem; color: var(--gray);">Covering up to 5 family members with $50 food allowance[cite: 1]</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Policy Terms & Conditions (Accordion) -->
+    <section id="policy" class="services-bg">
+        <div class="section-header">
+            <h2>Policy Terms & Conditions</h2>[cite: 4, 5]
+            <p style="color: var(--gray); margin-top: 8px;">Important operational terms and claims information</p>
+        </div>
+        <div class="policy-section">
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    1. Waiting Periods & Commencement <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-content">
+                    <p>Cover commences after a 90-day waiting period from the commencement date for member, spouse, or own children aged 25 years and below. Accidental death cover is immediate subject to policy rules[cite: 4]. Individual plans carry a 2 to 3 month waiting period; group plans carry no waiting period[cite: 5].</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    2. Age & Surname Guidelines <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-content">
+                    <p>Children are covered up to the age of 25 years provided they are unmarried[cite: 2, 4]. Covered lives must carry the same surname as the proposer unless registered as extended family[cite: 2].</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    3. Premium Payments & Grace Periods <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-content">
+                    <p>A 15-day grace period is allowed for late monthly premium payments[cite: 4]. In the event of non-payment beyond grace periods, the policy will lapse[cite: 2, 4]. Payments are done at Kivern & Kundai offices, and valid receipts must be produced[cite: 2].</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    4. Required Claims Documentation <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-content">
+                    <p>Upon a death occurrence, inform Kivern & Kundai immediately[cite: 2, 4]. Documents required include: Notice of Death or Burial Order, authentic ID documentation of deceased, national identity card or birth certificate for children[cite: 4].</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    5. General Exclusions <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-content">
+                    <p>No services or benefits will be rendered to persons who commit suicide within 2 years from the date of policy commencement or renewal[cite: 2, 4].</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Locations Section -->
+    <section id="contact">
+        <div class="section-header">
+            <h2>Contact & Branch Locations</h2>
+            <p style="color: var(--gray); margin-top: 8px;">Visit our offices or reach out to our team at any time</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-info-card">
+                <h3>Our Offices</h3>
+                <br>
+                <div class="info-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <strong>Budiriro Branch (Main)</strong>
+                        <p>Stand 595 Budiriro 1, 212 Close, Harare[cite: 1, 3, 5]</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <strong>Waterfalls Branch</strong>
+                        <p>5382 Retreat Park, Waterfalls, Harare[cite: 3, 5]</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-info-card">
+                <h3>24/7 Phone Helplines</h3>[cite: 1, 3, 5]
+                <br>
+                <div class="info-item">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <div>
+                        <strong>Direct Calls & WhatsApp</strong>
+                        <div class="phone-numbers">
+                            <a href="tel:+263772128153">+263 772 128 153</a>[cite: 1, 3, 5]
+                            <a href="tel:+263787151513">+263 787 151 513</a>[cite: 1]
+                            <a href="tel:+263777120622">+263 777 120 622</a>[cite: 1, 3, 5]
+                            <a href="tel:+263776513246">+263 776 513 246</a>[cite: 1, 3, 5]
+                            <a href="tel:+263719420622">+263 719 420 622</a>[cite: 1, 3, 5]
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="logo-container" style="justify-content: center; margin-bottom: 15px;">
+            <div class="logo-icon">KK</div>
+            <div class="logo-text">
+                <h1 style="color: white;">KIVERN & KUNDAI</h1>[cite: 1, 3]
+            </div>
+        </div>
+        <p style="font-size: 0.9rem; color: #94A3B8;">Your peace of mind is our priority[cite: 1]</p>
+        <div class="footer-bottom">
+            &copy; 2026 Kivern & Kundai Funeral Services. All rights reserved.[cite: 1, 3]
+        </div>
+    </footer>
+
+    <!-- Interactive Script -->
+    <script>
+        // Calculator Logic
+        function calculateTotal() {
+            const planRate = parseFloat(document.getElementById('plan-select').value);
+            const units = parseInt(document.getElementById('family-groups').value) || 1;
+            const total = planRate * units;
+            
+            document.getElementById('calc-total').innerText = '$' + total.toFixed(2) + ' USD';
+
+            const descElem = document.getElementById('calc-desc');
+            if (planRate === 5) {
+                descElem.innerText = `Covering ${units * 5} members under the Kivern Diamond Plan.`;[cite: 1]
+            } else if (planRate === 7) {
+                descElem.innerText = `Covering ${units * 5} members with $${units * 50} food allowance under Kundai Family Plan.`;[cite: 1]
+            } else if (planRate === 9) {
+                descElem.innerText = `Covering ${units * 5} members with $${units * 100} food allowance under Kundai Emerald Plan.`;[cite: 1]
+            }
+        }
+
+        // Accordion Interactivity
+        function toggleAccordion(header) {
+            const item = header.parentElement;
+            const isActive = item.classList.contains('active');
+            
+            document.querySelectorAll('.accordion-item').forEach(el => {
+                el.classList.remove('active');
+                el.querySelector('.fa-chevron-down')?.setStyle;
+            });
+
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
