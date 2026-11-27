@@ -19,7 +19,6 @@ const PLAN_DETAILS = {
     9: { name: 'Kundai Emerald Plan', value: 'Kundai Emerald Plan ($9/pm)', foodAllowance: 100 }
 };
 
-let calculatorEstimateUnits = 1;
 let applicationEstimateUnits = 1;
 let modalPreviousFocus = null;
 let previousBodyOverflow = '';
@@ -79,7 +78,6 @@ function updateCalculatorEstimate({ announce = false } = {}) {
         return null;
     }
 
-    calculatorEstimateUnits = values.units;
     const estimate = calculateEstimate(values.rate, values.units);
     totalElement.textContent = `$${estimate.total.toFixed(2)} USD`;
     if (estimate.rate === 5) {
@@ -412,20 +410,37 @@ function initFormHandlers() {
 
     btnAddDep?.addEventListener('click', addDependentRow);
 
-    // Required text fields must contain non-whitespace content, not just spaces.
-    form?.querySelectorAll('input[required][type="text"], input[required][type="tel"]').forEach(input => {
-        let touched = false;
-        const validateTrimmedValue = () => {
-            if (!touched && !input.value) {
-                input.setCustomValidity('');
-                input.removeAttribute('aria-invalid');
-                return;
-            }
-            input.setCustomValidity(input.value.trim() ? '' : 'Please complete this field.');
-            input.setAttribute('aria-invalid', String(!input.checkValidity()));
-        };
-        input.addEventListener('input', () => { touched = true; validateTrimmedValue(); });
-        input.addEventListener('blur', () => { touched = true; validateTrimmedValue(); });
+    // Required text fields (including dynamically-added dependents) must contain
+    // non-whitespace content. Delegation keeps validation working for new rows.
+    const touchedTrimmedFields = new WeakSet();
+    const isTrimmedRequiredField = input =>
+        input instanceof HTMLInputElement &&
+        input.required &&
+        (input.type === 'text' || input.type === 'tel');
+
+    const validateTrimmedValue = (input, markTouched = false) => {
+        if (!isTrimmedRequiredField(input)) return;
+        if (markTouched) touchedTrimmedFields.add(input);
+
+        if (!touchedTrimmedFields.has(input) && !input.value) {
+            input.setCustomValidity('');
+            input.removeAttribute('aria-invalid');
+            return;
+        }
+
+        input.setCustomValidity(input.value.trim() ? '' : 'Please complete this field.');
+        input.setAttribute('aria-invalid', String(!input.checkValidity()));
+    };
+
+    form?.addEventListener('input', event => {
+        if (isTrimmedRequiredField(event.target)) {
+            validateTrimmedValue(event.target, true);
+        }
+    });
+    form?.addEventListener('focusout', event => {
+        if (isTrimmedRequiredField(event.target)) {
+            validateTrimmedValue(event.target, true);
+        }
     });
 
     document.getElementById('dependents-container')?.addEventListener('click', event => {
