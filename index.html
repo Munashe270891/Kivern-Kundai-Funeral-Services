@@ -188,7 +188,7 @@
             </div>
             <div class="calc-group">
                 <label for="family-groups">Number of Family Units (5 Members per Unit):</label>
-                <input type="number" id="family-groups" min="1" max="10" value="1">
+                <input type="number" id="family-groups" min="1" max="10" step="1" value="1" required aria-describedby="calc-desc">
             </div>
             
             <div class="calc-btn-group">
@@ -198,8 +198,8 @@
 
             <div class="calc-result">
                 <h4>Total Monthly Subscription</h4>
-                <div class="amount" id="calc-total">$7.00 USD</div>
-                <p id="calc-desc" style="font-size: 0.85rem; color: var(--gray);">Covering up to 5 family members with $50 food allowance</p>
+                <div class="amount" id="calc-total" aria-live="polite" aria-atomic="true">$7.00 USD</div>
+                <p id="calc-desc" aria-live="polite" style="font-size: 0.85rem; color: var(--gray);">Covering up to 5 family members with $50 food allowance</p>
             </div>
         </div>
     </section>
@@ -338,6 +338,7 @@
                         </select>
                     </div>
                 </div>
+                <p id="application-estimate" class="application-estimate" aria-live="polite">Current estimate: $7.00 USD per month for 5 covered members. This is an estimate based on 1 family unit.</p>
 
                 <div class="form-section-title">2. Principal Member Details (Proposer)</div>
                 <div class="form-grid">

@@ -1210,3 +1210,20 @@ textarea:focus-visible {
         transition-duration: 0.01ms !important;
     }
 }
+
+
+/* Step 3: visible, accessible estimate summary in the application form */
+.application-estimate {
+    margin: 12px 0 20px;
+    padding: 12px 14px;
+    border-left: 4px solid var(--secondary);
+    border-radius: 6px;
+    background: #f8fafc;
+    color: var(--dark, #334155);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+input[aria-invalid="true"] {
+    border-color: #b91c1c;
+}
