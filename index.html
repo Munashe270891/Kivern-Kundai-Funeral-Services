@@ -30,7 +30,7 @@
     </div>
 
     <!-- Navigation Header -->
-    <nav>
+    <nav id="main-navigation" aria-label="Main navigation">
         <div class="logo-container">
             <div class="logo-icon">KK</div>
             <div class="logo-text">
@@ -38,7 +38,12 @@
                 <span>FUNERAL SERVICES</span>
             </div>
         </div>
-        <ul class="nav-links">
+        <button class="nav-toggle" id="nav-toggle" type="button"
+                aria-expanded="false" aria-controls="primary-navigation"
+                aria-label="Open navigation menu">
+            <span class="nav-toggle-icon" aria-hidden="true"><i class="fa-solid fa-bars"></i></span>
+        </button>
+        <ul class="nav-links" id="primary-navigation" aria-hidden="false">
             <li><a href="#plans">Cover Plans</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#calculator">Calculator</a></li>
@@ -207,42 +212,52 @@
         </div>
         <div class="policy-section">
             <div class="accordion-item">
-                <div class="accordion-header">
-                    1. Waiting Periods & Commencement <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="accordion-content">
+                <button class="accordion-header" id="policy-heading-1" type="button"
+                        aria-expanded="false" aria-controls="policy-panel-1">
+                    1. Waiting Periods & Commencement <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                </button>
+                <div class="accordion-content" id="policy-panel-1" role="region"
+                     aria-labelledby="policy-heading-1" hidden>
                     <p>Cover commences after a 90-day waiting period from the commencement date for member, spouse, or own children aged 25 years and below. Accidental death cover is immediate subject to policy rules. Individual plans carry a 2 to 3 month waiting period; group plans carry no waiting period.</p>
                 </div>
             </div>
             <div class="accordion-item">
-                <div class="accordion-header">
-                    2. Age & Surname Guidelines <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="accordion-content">
+                <button class="accordion-header" id="policy-heading-2" type="button"
+                        aria-expanded="false" aria-controls="policy-panel-2">
+                    2. Age & Surname Guidelines <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                </button>
+                <div class="accordion-content" id="policy-panel-2" role="region"
+                     aria-labelledby="policy-heading-2" hidden>
                     <p>Children are covered up to the age of 25 years provided they are unmarried. Covered lives must carry the same surname as the proposer unless registered as extended family.</p>
                 </div>
             </div>
             <div class="accordion-item">
-                <div class="accordion-header">
-                    3. Premium Payments & Grace Periods <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="accordion-content">
+                <button class="accordion-header" id="policy-heading-3" type="button"
+                        aria-expanded="false" aria-controls="policy-panel-3">
+                    3. Premium Payments & Grace Periods <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                </button>
+                <div class="accordion-content" id="policy-panel-3" role="region"
+                     aria-labelledby="policy-heading-3" hidden>
                     <p>A 15-day grace period is allowed for late monthly premium payments. In the event of non-payment beyond grace periods, the policy will lapse. Payments are done at Kivern & Kundai offices, and valid receipts must be produced.</p>
                 </div>
             </div>
             <div class="accordion-item">
-                <div class="accordion-header">
-                    4. Required Claims Documentation <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="accordion-content">
+                <button class="accordion-header" id="policy-heading-4" type="button"
+                        aria-expanded="false" aria-controls="policy-panel-4">
+                    4. Required Claims Documentation <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                </button>
+                <div class="accordion-content" id="policy-panel-4" role="region"
+                     aria-labelledby="policy-heading-4" hidden>
                     <p>Upon a death occurrence, inform Kivern & Kundai immediately. Documents required include: Notice of Death or Burial Order, authentic ID documentation of deceased, national identity card or birth certificate for children.</p>
                 </div>
             </div>
             <div class="accordion-item">
-                <div class="accordion-header">
-                    5. General Exclusions <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="accordion-content">
+                <button class="accordion-header" id="policy-heading-5" type="button"
+                        aria-expanded="false" aria-controls="policy-panel-5">
+                    5. General Exclusions <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                </button>
+                <div class="accordion-content" id="policy-panel-5" role="region"
+                     aria-labelledby="policy-heading-5" hidden>
                     <p>No services or benefits will be rendered to persons who commit suicide within 2 years from the date of policy commencement or renewal.</p>
                 </div>
             </div>
@@ -296,11 +311,11 @@
     </section>
 
     <!-- Joining / Application Modal Form -->
-    <div class="modal-overlay" id="app-modal">
-        <div class="modal-card">
-            <button class="modal-close" id="btn-close-modal"><i class="fa-solid fa-xmark"></i></button>
+    <div class="modal-overlay" id="app-modal" aria-hidden="true">
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="application-modal-title" tabindex="-1">
+            <button class="modal-close" id="btn-close-modal" type="button" aria-label="Close application form"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
             
-            <h2 style="color: var(--primary); margin-bottom: 5px;">Policy Application Form</h2>
+            <h2 id="application-modal-title" style="color: var(--primary); margin-bottom: 5px;">Policy Application Form</h2>
             <p style="font-size: 0.85rem; color: var(--gray); margin-bottom: 15px;">Kivern & Kundai Funeral Services Member Registration</p>
             
             <form id="policy-application-form">
