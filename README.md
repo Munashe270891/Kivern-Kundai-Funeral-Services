@@ -40,23 +40,5 @@ This is a **front-end prototype**, not a complete policy administration system.
 - A browser may block pop-up windows. Allow pop-ups for the site if WhatsApp or the print document does not open.
 - A successful local save does not mean the business received or approved the application.
 
-## Final-check notes
 
-- JavaScript syntax was checked with `node --check`.
-- JavaScript ID selectors were compared with HTML IDs; the static audit found no missing ID targets or duplicate HTML IDs.
-- Button wiring, calculator/modal selectors, accordion relationships, and responsive CSS breakpoints were reviewed.
-- Validation was improved to cover dynamically created dependent-name fields as well as fields present when the page loads.
-- Browser-level testing across real devices and browsers is still recommended. Static checks cannot guarantee all rendering, pop-up, WhatsApp or print behaviour.
 
-## Suggested manual test checklist
-
-- [ ] Open each plan's application button and verify the correct plan is selected.
-- [ ] Calculate all three rates and several family-unit counts; test blank, zero, negative, decimal and 11 units.
-- [ ] Apply from the calculator and confirm the estimate matches the selected plan and unit count.
-- [ ] Add and remove dependent rows; test the five-row limit and whitespace-only dependent names.
-- [ ] Submit with required fields blank, then with whitespace-only values, and confirm invalid submissions are blocked.
-- [ ] Test names and addresses containing `&`, `<`, `>`, quotes and apostrophes in the WhatsApp message and print document.
-- [ ] Confirm WhatsApp opens with a correctly encoded message and the user can review it before sending.
-- [ ] Confirm the print document opens and can be printed or saved as PDF.
-- [ ] Test mobile navigation at narrow widths, Escape-to-close, keyboard focus and reduced-motion settings.
-- [ ] Test with pop-ups blocked and with browser storage disabled or full.
